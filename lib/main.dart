@@ -17,6 +17,7 @@ class _MyCurrencyState extends State<MyCurrency> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         TextField(
+          decoration: InputDecoration(border: OutlineInputBorder()),
           keyboardType: TextInputType.none,
           controller: controller1,
         ),
