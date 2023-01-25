@@ -21,6 +21,7 @@ class _MyCurrencyState extends State<MyCurrency> {
           readOnly: true,
           controller: controller1,
         ),
+    
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -30,8 +31,9 @@ class _MyCurrencyState extends State<MyCurrency> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        controller1.text += '7';
+                        controller1.text+='7';
                       });
+                     
                     },
                     child: Text('7')),
                 ElevatedButton(
@@ -51,10 +53,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        controller1.text += '.';
+                        controller1.text='';
                       });
                     },
-                    child: Text('.'))
+                    child: Text('clear'))
               ],
             ),
             Column(
@@ -83,7 +85,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        controller1.text += '0';
+                        controller1.text += '0'.toString();
                       });
                     },
                     child: Text('0'))
@@ -115,10 +117,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        controller1.text += ',';
+                        controller1.text += '';
                       });
                     },
-                    child: Text(','))
+                    child: Text('='))
               ],
             ),
             Column(
@@ -127,6 +129,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                     onPressed: () {
                       setState(() {
                         controller1.text += '+';
+                      });
+                      setState(() {
+                        num number=num.parse(controller1.text);
+                        controller1.text=(number*number).toString();
                       });
                     },
                     child: Text('+')),
