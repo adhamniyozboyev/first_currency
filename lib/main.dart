@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class MyCurrency extends StatefulWidget {
   const MyCurrency({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class _MyCurrencyState extends State<MyCurrency> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         TextField(
-          readOnly: true,
+          keyboardType: TextInputType.none,
           controller: controller1,
         ),
     
@@ -146,7 +145,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        controller1.text += '*';
+                        controller1.text += '  *';
                       });
                     },
                     child: Text('*')),
