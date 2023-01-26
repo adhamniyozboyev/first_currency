@@ -20,11 +20,12 @@ class _MyCurrencyState extends State<MyCurrency> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+      appBar: AppBar(title:Center(child: Text('My calc')),backgroundColor: Color.fromARGB(255, 51, 155, 241),),
+        backgroundColor: Color.fromARGB(255, 139, 213, 143),
         body: Column(
           children: [
             SizedBox(
-              height: 450,
+              height: 310,
             ),
             TextField(
               decoration: InputDecoration(
@@ -36,7 +37,7 @@ class _MyCurrencyState extends State<MyCurrency> {
             ),
             Container(
               color: Colors.white,
-              // height: 400,
+              height: 397.7,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -61,7 +62,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                         ),
                       ),
                       ElevatedButton(
+                        
                           style: ElevatedButton.styleFrom(
+                            fixedSize: Size(15, 45),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor: Colors.orange),
                           onPressed: () {
                             controller1.text += '9';
@@ -102,11 +106,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                           },
                           child: Text('6')),
                       ElevatedButton(
+                                                                                                      style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 121, 166, 245)),
+
                           onPressed: () {
-                            style:
-                            ElevatedButton.styleFrom(
-                                backgroundColor:
-                                    Color.fromARGB(255, 121, 166, 245));
+                          
                             controller1.text += '-';
                           },
                           child: Text('-'))
@@ -137,11 +140,10 @@ class _MyCurrencyState extends State<MyCurrency> {
                           },
                           child: Text('3')),
                       ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
-                            style:
-                            ElevatedButton.styleFrom(
-                                backgroundColor:
-                                    Color.fromARGB(255, 121, 166, 245));
                             int ind = 0;
                             String s = controller1.text;
                             ind = s.indexOf('+');
