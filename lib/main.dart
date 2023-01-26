@@ -46,14 +46,18 @@ class _MyCurrencyState extends State<MyCurrency> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                             fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '7';
                           },
                           child: Text('7')),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
+                           fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                            backgroundColor: Colors.black),
                         onPressed: () {
                           controller1.text += '8';
                         },
@@ -64,21 +68,23 @@ class _MyCurrencyState extends State<MyCurrency> {
                       ElevatedButton(
                         
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(15, 45),
+                            fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '9';
                           },
                           child: Text('9')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                             fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
-                            controller1.text = '';
+                            controller1.text += '+';
                           },
-                          child: Text('clear'))
+                          child: Text('+'))
                     ],
                   ),
                   Row(
@@ -86,27 +92,36 @@ class _MyCurrencyState extends State<MyCurrency> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                            fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '4';
                           },
                           child: Text('4')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '5';
                           },
                           child: Text('5')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '6';
                           },
                           child: Text('6')),
                       ElevatedButton(
-                                                                                                      style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 121, 166, 245)),
+               style: ElevatedButton.styleFrom(
+                    fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+               backgroundColor: Color.fromARGB(255, 121, 166, 245)),
 
                           onPressed: () {
                           
@@ -120,27 +135,35 @@ class _MyCurrencyState extends State<MyCurrency> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '1';
                           },
                           child: Text('1')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '2';
                           },
                           child: Text('2')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '3';
                           },
                           child: Text('3')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
@@ -175,15 +198,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                               controller1.text = ans.toString();
                             }
 
-                            ind = s.indexOf('%');
-                            if (ind != -1) {
-                              {
-                                String a = s.substring(0, ind);
-                                String b = s.substring(ind + 1);
-                                int ans = (int.parse(b) * 100 ~/ int.parse(a));
-                                controller1.text = ans.toString();
-                              }
-                            }
+                           
                           },
                           child: Text('='))
                     ],
@@ -193,27 +208,35 @@ class _MyCurrencyState extends State<MyCurrency> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '.';
                           },
                           child: Text('.')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '0';
                           },
                           child: Text('0')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             controller1.text += '00';
                           },
                           child: Text('00')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
@@ -227,6 +250,8 @@ class _MyCurrencyState extends State<MyCurrency> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
@@ -234,15 +259,20 @@ class _MyCurrencyState extends State<MyCurrency> {
                           },
                           child: Text('C')),
                       ElevatedButton(
+                        
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
                             controller1.text = '';
                           },
-                          child: Text('AC')),
+                          child: Text('clear')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
@@ -252,12 +282,14 @@ class _MyCurrencyState extends State<MyCurrency> {
                           child: Text('X')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                                 fixedSize: Size(25, 65),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
                                   Color.fromARGB(255, 121, 166, 245)),
                           onPressed: () {
-                            controller1.text += '%';
+                            controller1.text += '*';
                           },
-                          child: Text('%'))
+                          child: Text('*'))
                     ],
                   ),
                 ],
