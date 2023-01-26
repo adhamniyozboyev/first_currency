@@ -80,7 +80,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                              fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text += '+';
                           },
@@ -121,7 +121,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                style: ElevatedButton.styleFrom(
                     fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
-               backgroundColor: Color.fromARGB(255, 121, 166, 245)),
+               backgroundColor: Colors.orange),
 
                           onPressed: () {
                           
@@ -165,7 +165,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             int ind = 0;
                             String s = controller1.text;
@@ -238,7 +238,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text += '/';
                           },
@@ -253,7 +253,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text = '0';
                           },
@@ -264,7 +264,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text = '';
                           },
@@ -274,7 +274,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text = controller1.text
                                 .substring(0, controller1.text.length - 1);
@@ -285,7 +285,7 @@ class _MyCurrencyState extends State<MyCurrency> {
                                  fixedSize: Size(25, 65),
                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
                               backgroundColor:
-                                  Color.fromARGB(255, 121, 166, 245)),
+                                  Colors.orange),
                           onPressed: () {
                             controller1.text += '*';
                           },
