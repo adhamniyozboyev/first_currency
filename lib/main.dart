@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
                             onPressed: () {
@@ -57,7 +58,8 @@ class _MyAppState extends State<MyApp> {
                             child: Text('/'))
                       ],
                     ),
-                        Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
                             onPressed: () {
@@ -65,11 +67,10 @@ class _MyAppState extends State<MyApp> {
                             },
                             child: Text('7')),
                         ElevatedButton(
-                          onPressed: () {
-                            _controller.text+='8';
-                          },
-                          child: Text('8')
-                        ),
+                            onPressed: () {
+                              _controller.text += '8';
+                            },
+                            child: Text('8')),
                         ElevatedButton(
                             onPressed: () {
                               _controller.text += '9';
@@ -82,7 +83,8 @@ class _MyAppState extends State<MyApp> {
                             child: Text('x'))
                       ],
                     ),
-                            Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
                             onPressed: () {
@@ -90,11 +92,10 @@ class _MyAppState extends State<MyApp> {
                             },
                             child: Text('4')),
                         ElevatedButton(
-                          onPressed: () {
-                            _controller.text+='5';
-                          },
-                          child: Text('5')
-                        ),
+                            onPressed: () {
+                              _controller.text += '5';
+                            },
+                            child: Text('5')),
                         ElevatedButton(
                             onPressed: () {
                               _controller.text += '6';
@@ -107,7 +108,8 @@ class _MyAppState extends State<MyApp> {
                             child: Text('-'))
                       ],
                     ),
-                      Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
                             onPressed: () {
@@ -115,11 +117,10 @@ class _MyAppState extends State<MyApp> {
                             },
                             child: Text('1')),
                         ElevatedButton(
-                          onPressed: () {
-                            _controller.text+='2';
-                          },
-                          child: Text('2')
-                        ),
+                            onPressed: () {
+                              _controller.text += '2';
+                            },
+                            child: Text('2')),
                         ElevatedButton(
                             onPressed: () {
                               _controller.text += '3';
@@ -132,25 +133,40 @@ class _MyAppState extends State<MyApp> {
                             child: Text('+'))
                       ],
                     ),
-                      Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
                             onPressed: () {
-                              _controller.text += '4';
+                              _controller.text += '0';
                             },
-                            child: Text('4')),
-                        ElevatedButton(
-                          onPressed: () {
-                            _controller.text+='5';
-                          },
-                          child: Text('5')
-                        ),
+                            child: Text('0')),
                         ElevatedButton(
                             onPressed: () {
-                              _controller.text += '6';
+                              _controller.text += ',';
                             },
-                            child: Text('6')),
-                     
+                            child: Text(',')),
+                        ElevatedButton(
+                            onPressed: () {
+                              int ind = 0;
+                              String st = _controller.text;
+
+                              ind = st.indexOf('+');
+                              if (ind != -1) {
+                                String a = st.substring(0, ind);
+                                String b = st.substring(ind + 1);
+                                int ans = int.parse(a) + int.parse(b);
+                                _controller.text = ans.toString();
+
+                                ind =st.indexOf('-');
+                                if(ind !=-1){
+                                String a=st.substring(0,ind);
+                                String b=st.substring(ind+1);
+                                int ans=int.parse(a)-int.parse(b);
+                                _controller.text=ans.toString();
+                              }}
+                            },
+                            child: Text('=')),
                       ],
                     ),
                   ],
