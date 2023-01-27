@@ -15,18 +15,26 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController _controller = TextEditingController();  
+  TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Center(child: Text('Adham calc'),),backgroundColor: Colors.black,),
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(height: 400,),
+          SizedBox(
+            height: 320,
+          ),
           TextField(
             controller: _controller,
             readOnly: true,
-            decoration: InputDecoration(border: OutlineInputBorder()),
+            decoration: InputDecoration(
+           
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder()),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -35,45 +43,41 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 168, 166, 166)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 168, 166, 166)),
                   onPressed: () {
                     _controller.text = '';
                   },
-                  child: Text('AC')),
+                  child: Text('AC',style: TextStyle(fontSize: 20,color: Colors.black),)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(70)),
-                    fixedSize: Size(30, 65),
-                    backgroundColor:
-                        Color.fromARGB(255, 168, 166, 166)),
+                    fixedSize: Size(40, 65),
+                    backgroundColor: Color.fromARGB(255, 168, 166, 166)),
                 onPressed: () {},
-                child: Icon(Icons.calculate),
-              ),
+                child: Icon(Icons.calculate,size: 20,color: Colors.black)),
+              
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 168, 166, 166)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 168, 166, 166)),
                   onPressed: () {
                     _controller.text += '%';
                   },
-                  child: Text('%')),
+                  child: Text('%',style: TextStyle(fontSize: 20,color: Colors.black))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 245, 161, 25)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     _controller.text += '/';
                   },
-                  child: Text('/'))
+                  child: Text('/',style: TextStyle(fontSize: 20,)))
             ],
           ),
           Row(
@@ -83,46 +87,42 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '7';
                   },
-                  child: Text('7')),
+                  child: Text('7',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '8';
                   },
-                  child: Text('8')),
+                  child: Text('8',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '9';
                   },
-                  child: Text('9')),
+                  child: Text('9',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 245, 161, 25)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     _controller.text += 'x';
                   },
-                  child: Text('x'))
+                  child: Text('x',style: TextStyle(fontSize: 20,)))
             ],
           ),
           Row(
@@ -132,46 +132,42 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '4';
                   },
-                  child: Text('4')),
+                  child: Text('4',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '5';
                   },
-                  child: Text('5')),
+                  child: Text('5',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '6';
                   },
-                  child: Text('6')),
+                  child: Text('6',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 245, 161, 25)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     _controller.text += '-';
                   },
-                  child: Text('-'))
+                  child: Text('-',style: TextStyle(fontSize: 20,)))
             ],
           ),
           Row(
@@ -181,46 +177,42 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '1';
                   },
-                  child: Text('1')),
+                  child: Text('1',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '2';
                   },
-                  child: Text('2')),
+                  child: Text('2',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '3';
                   },
-                  child: Text('3')),
+                  child: Text('3',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 245, 161, 25)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     _controller.text += '+';
                   },
-                  child: Text('+'))
+                  child: Text('+',style: TextStyle(fontSize: 20,)))
             ],
           ),
           Row(
@@ -230,31 +222,28 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(155, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(165, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += '0';
                   },
-                  child: Text('0')),
+                  child: Text('0',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 78, 77, 76)),
+                      fixedSize: Size(40, 65),
+                      backgroundColor: Color.fromARGB(255, 78, 77, 76)),
                   onPressed: () {
                     _controller.text += ',';
                   },
-                  child: Text(',')),
+                  child: Text(',',style: TextStyle(fontSize: 20,))),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
                       fixedSize: Size(30, 65),
-                      backgroundColor:
-                          Color.fromARGB(255, 245, 161, 25)),
+                      backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     int ind = 0;
                     String s = _controller.text;
@@ -287,7 +276,7 @@ class _MyAppState extends State<MyApp> {
                       _controller.text = ans.toString();
                     }
                   },
-                  child: Text('=')),
+                  child: Text('=',style: TextStyle(fontSize: 20,))),
             ],
           )
         ],
