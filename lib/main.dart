@@ -242,7 +242,7 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(70)),
-                      fixedSize: Size(30, 65),
+                      fixedSize: Size(30.5, 65),
                       backgroundColor: Color.fromARGB(255, 245, 161, 25)),
                   onPressed: () {
                     int ind = 0;
