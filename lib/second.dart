@@ -89,9 +89,7 @@ class _MyAppState extends State<MyApp> {
                             borderRadius: BorderRadius.circular(70)),
                         fixedSize: Size(40, 65),
                         backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                    
-                    },
+                    onPressed: () {},
                     child: Text('/',
                         style: TextStyle(
                           fontSize: 35,
