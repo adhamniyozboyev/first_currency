@@ -1,8 +1,8 @@
+import 'package:first_currency/second.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -15,332 +15,70 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController _controller = TextEditingController();
+  TextEditingController controller = TextEditingController();
+  Widget wid(String a) {
+    return ElevatedButton(
+        onPressed: () {
+          controller.text += a;
+        },
+        child: Text(a));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text('Adham calc'),
-        ),
-        backgroundColor: Colors.black,
-      ),
-      backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              height: 270,
-            ),
-            TextField(
-              textDirection: TextDirection.rtl,
-              controller: _controller,
-              readOnly: true,
-              style: TextStyle(color: Colors.white, fontSize: 50),
-              decoration: InputDecoration(
-                  hintText: '                          0',
-                  hintStyle: TextStyle(color: Colors.white),                
-                  border: OutlineInputBorder()),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 168, 166, 166)),
-                    onPressed: () {
-                      _controller.text = '';
-                    },
-                    child: Text(
-                      'AC',
-                      style: TextStyle(fontSize: 24, color: Colors.black),
-                    )),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 168, 166, 166)),
-                    onPressed: () {},
-                    child:
-                        Icon(Icons.calculate, size: 35, color: Colors.black)),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 168, 166, 166)),
-                    onPressed: () {
-                      _controller.text += '%';
-                    },
-                    child: Text('%',
-                        style: TextStyle(fontSize: 35, color: Colors.black))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                      _controller.text += '/';
-                    },
-                    child: Text('/',
-                        style: TextStyle(
-                          fontSize: 35,
-                        )))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '7';
-                    },
-                    child: Text('7',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '8';
-                    },
-                    child: Text('8',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '9';
-                    },
-                    child: Text('9',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                      _controller.text += 'x';
-                    },
-                    child: Text('x',
-                        style: TextStyle(
-                          fontSize: 35,
-                        )))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '4';
-                    },
-                    child: Text('4',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '5';
-                    },
-                    child: Text('5',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '6';
-                    },
-                    child: Text('6',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                      _controller.text += '-';
-                    },
-                    child: Text('-',
-                        style: TextStyle(
-                          fontSize: 35,
-                        )))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '1';
-                    },
-                    child: Text('1',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '2';
-                    },
-                    child: Text('2',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '3';
-                    },
-                    child: Text('3',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                      _controller.text += '+';
-                    },
-                    child: Text('+',
-                        style: TextStyle(
-                          fontSize: 35,
-                        )))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(165, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += '0';
-                    },
-                    child: Text('0                    ',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(40, 65),
-                        backgroundColor: Color.fromARGB(255, 78, 77, 76)),
-                    onPressed: () {
-                      _controller.text += ',';
-                    },
-                    child: Text(',',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(70)),
-                        fixedSize: Size(30.5, 65),
-                        backgroundColor: Color.fromARGB(255, 245, 161, 25)),
-                    onPressed: () {
-                      int ind = 0;
-                      String s = _controller.text;
-                      ind = s.indexOf('+');
-                      if (ind != -1) {
-                        String a = s.substring(0, ind);
-                        String b = s.substring(ind + 1);
-                        num ans = num.parse(a) + num.parse(b);
-                        _controller.text = ans.toString();
-                      }
-                      ind = s.indexOf('-');
-                      if (ind != -1) {
-                        String a = s.substring(0, ind);
-                        String b = s.substring(ind + 1);
-                        num ans = num.parse(a) - num.parse(b);
-                        _controller.text = ans.toString();
-                      }
-                      ind = s.indexOf('/');
-                      if (ind != -1) {
-                        String a = s.substring(0, ind);
-                        String b = s.substring(ind + 1);
-                        num ans = num.parse(a) / num.parse(b);
-                        _controller.text = ans.toString();
-                      }
-                      ind = s.indexOf('x');
-                      if (ind != -1) {
-                        String a = s.substring(0, ind);
-                        String b = s.substring(ind + 1);
-                        int ans = int.parse(a) * int.parse(b);
-                        _controller.text = ans.toString();
-                      }
-                    },
-                    child: Text('=',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ))),
-              ],
-            )
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          TextField(
+            controller: controller,
+            decoration: InputDecoration(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              wid('AC'),
+              wid('mas'),
+              wid('%'),
+              wid('/'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              wid('7'),
+              wid('8'),
+              wid('9'),
+              wid('X'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              wid('4'),
+              wid('5'),
+              wid('6'),
+              wid('-'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              wid('1'),
+              wid('2'),
+              wid('3'),
+              wid('+'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              wid('0'),
+              wid('.'),
+              wid('='),
+            ],
+          )
+        ],
       ),
     );
   }
