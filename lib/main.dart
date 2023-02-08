@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   TextEditingController controller = TextEditingController();
-  Widget exp(String b,  [Color col2 = Colors.orange]) {
+  Widget exp(String b, [Color col2 = Colors.orange]) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: col2,
@@ -25,10 +25,21 @@ class _MyAppState extends State<MyApp> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
         onPressed: (() {
-          controller.text+=b;
+          if (controller.text[controller.text.length - 1] == '-') {
+            controller.text =
+                controller.text.substring(0, controller.text.length - 1);
+          } else if (controller.text[controller.text.length - 1] == '+') {
+            controller.text =
+                controller.text.substring(0, controller.text.length - 1);
+          } else if (controller.text[controller.text.length - 1] == 'x') {
+            controller.text =
+                controller.text.substring(0, controller.text.length - 1);
+          } else if (controller.text[controller.text.length - 1] == '/') {
+            controller.text =
+                controller.text.substring(0, controller.text.length - 1);
+          }
+          controller.text += b;
         }),
-      
-
         child: Text(
           b,
           style: TextStyle(fontSize: 30),
@@ -108,26 +119,17 @@ class _MyAppState extends State<MyApp> {
               wid('7'),
               wid('8'),
               wid('9'),
-              exp('x', )
+              exp(
+                'x',
+              )
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              wid('4'),
-              wid('5'),
-              wid('6'),
-              exp('-')
-            ]
-          ),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [wid('4'), wid('5'), wid('6'), exp('-')]),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              wid('1'),
-              wid('2'),
-              wid('3'),
-              exp('+' )
-            ],
+            children: [wid('1'), wid('2'), wid('3'), exp('+')],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,13 +140,42 @@ class _MyAppState extends State<MyApp> {
                           borderRadius: BorderRadius.circular(20)),
                       backgroundColor: Colors.black,
                       fixedSize: Size(163, 65)),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.text += '0';
+                  },
                   child: Text(
                     '0',
                     style: TextStyle(fontSize: 30),
                   )),
               wid(' .'),
-              wid('=', Colors.orange),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      backgroundColor: Colors.orange,
+                      fixedSize: Size(40, 65)),
+                  onPressed: () {
+                    String exp = '+-x/';
+                    List<int> ind = [];
+                    //amallarni indexini olish
+                    for(int i = 0; i < controller.text.length; i++){
+                      if(exp.contains(controller.text[i])){
+                        ind.add(i);
+                      }                      
+                    }
+
+                    // raqamlarni olish
+                    List<num> numbers = [];
+                    int q = 0;
+                    for(int i in ind){
+                      numbers.add(num.parse(controller.text.substring(q,i)));
+                      q=i+1;
+                    }
+                    numbers.add(num.parse(controller.text.substring(ind.last + 1)));
+                    
+
+                  },
+                  child: Text('='))
             ],
           )
         ],
