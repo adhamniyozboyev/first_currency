@@ -153,7 +153,7 @@ class _MyAppState extends State<MyApp> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                       backgroundColor: Colors.orange,
-                      fixedSize: Size(40, 65)),
+                      fixedSize: Size(40, 65.1)),
                   onPressed: () {
                     String exp = '+-x/';
                     List<int> ind = [];
@@ -172,7 +172,7 @@ class _MyAppState extends State<MyApp> {
                       q=i+1;
                     }
                     numbers.add(num.parse(controller.text.substring(ind.last + 1)));
-                    
+
 
                   },
                   child: Text('='))
