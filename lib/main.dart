@@ -163,7 +163,7 @@ class _MyAppState extends State<MyApp> {
                         ind.add(i);
                       }
                     }
-                    print(1);
+                    
 
                     // raqamlarni olish
                     List<num> numbers = [];
@@ -174,10 +174,7 @@ class _MyAppState extends State<MyApp> {
                     }
                     numbers.add(
                         num.parse(controller.text.substring(ind.last + 1)));
-                    print(ind.length);
-                    print(ind);
-                    print(numbers.length);
-                    print(numbers);
+                  
 
                     for (int i = 0; i < ind.length; i++) {
                       if (controller.text[ind[i]] == 'x') {
@@ -192,7 +189,7 @@ class _MyAppState extends State<MyApp> {
                         i--;
                       }
                     }
-                    print(4);
+                    
 
                     for (int i = 0; i < ind.length; i++) {
                       if (controller.text[ind[i]] == '+') {
@@ -209,8 +206,8 @@ class _MyAppState extends State<MyApp> {
                         i--;
                       }
                     }
-                    print(5);
-                    controller.text=numbers[0].toString();
+                    
+                    controller.text=numbers[0].toStringAsFixed(4);
                   },
                   child: Text('='))
             ],
