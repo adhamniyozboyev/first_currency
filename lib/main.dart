@@ -94,7 +94,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text(
                     'C',
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 30.0),
                   )),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
