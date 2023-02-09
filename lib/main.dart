@@ -158,22 +158,59 @@ class _MyAppState extends State<MyApp> {
                     String exp = '+-x/';
                     List<int> ind = [];
                     //amallarni indexini olish
-                    for(int i = 0; i < controller.text.length; i++){
-                      if(exp.contains(controller.text[i])){
+                    for (int i = 0; i < controller.text.length; i++) {
+                      if (exp.contains(controller.text[i])) {
                         ind.add(i);
-                      }                      
+                      }
                     }
+                    print(1);
 
                     // raqamlarni olish
                     List<num> numbers = [];
                     int q = 0;
-                    for(int i in ind){
-                      numbers.add(num.parse(controller.text.substring(q,i)));
-                      q=i+1;
+                    for (int i in ind) {
+                      numbers.add(num.parse(controller.text.substring(q, i)));
+                      q = i + 1;
                     }
-                    numbers.add(num.parse(controller.text.substring(ind.last + 1)));
+                    numbers.add(
+                        num.parse(controller.text.substring(ind.last + 1)));
+                    print(ind.length);
+                    print(ind);
+                    print(numbers.length);
+                    print(numbers);
 
+                    for (int i = 0; i < ind.length; i++) {
+                      if (controller.text[ind[i]] == 'x') {
+                        numbers[i] = numbers[i] * numbers[i + 1];
+                        numbers.removeAt(i + 1);
+                        ind.removeAt(i);
+                        i--;
+                      } else if (controller.text[ind[i]] == '/') {
+                        numbers[i] = numbers[i] / numbers[i + 1];
+                        numbers.removeAt(i + 1);
+                        ind.removeAt(i);
+                        i--;
+                      }
+                    }
+                    print(4);
 
+                    for (int i = 0; i < ind.length; i++) {
+                      if (controller.text[ind[i]] == '+') {
+                        numbers[i] = numbers[i] + numbers[i + 1];
+                        numbers.removeAt(i + 1);
+                        ind.removeAt(i);
+                        i--;
+                      }
+                        else
+                      if (controller.text[ind[i]] == '-') {
+                        numbers[i] = numbers[i] - numbers[i + 1];
+                        numbers.removeAt(i + 1);
+                        ind.removeAt(i);
+                        i--;
+                      }
+                    }
+                    print(5);
+                    controller.text=numbers[0].toString();
                   },
                   child: Text('='))
             ],
